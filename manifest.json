@@ -6,7 +6,7 @@
 		"en": "Lightweight multi-account webmail",
 		"fr": "Webmail léger multi-comptes"
 	},
-	"version": "1.11.1",
+	"version": "1.11.3",
 	"url": "https://www.rainloop.net/",
 	"license": "AGPL-3.0",
 	"maintainer": {
@@ -18,7 +18,7 @@
 	"multi_instance": true,
 	"services": [
 		"nginx",
-		"php5-fpm",
+		"php7-fpm",
 		"mysql"
 	],
 	"arguments": {
