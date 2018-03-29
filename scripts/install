@@ -44,6 +44,13 @@ ynh_webpath_available $domain $path_url
 # Register (book) web path
 ynh_webpath_register $app $domain $path_url
 
+
+#=================================================
+# INSTALL DEPENDENCIES
+#=================================================
+
+ynh_install_app_dependencies php-curl php-xml
+
 #=================================================
 # STORE SETTINGS FROM MANIFEST
 #=================================================
