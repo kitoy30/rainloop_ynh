@@ -8,7 +8,7 @@
 
 source _common.sh
 source /usr/share/yunohost/helpers
-
+source _variables
 #=================================================
 # MANAGE SCRIPT FAILURE
 #=================================================
@@ -29,9 +29,9 @@ lang=$YNH_APP_ARG_LANG
 
 app=$YNH_APP_INSTANCE_NAME
 
-#=================================================
+#===================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
-#=================================================
+#===================================================
 
 final_path=/var/www/$app
 test ! -e "$final_path" || ynh_die "This path already contains a folder"
@@ -49,7 +49,7 @@ ynh_webpath_register $app $domain $path_url
 # INSTALL DEPENDENCIES
 #=================================================
 
-ynh_install_app_dependencies php-curl php-xml
+ynh_install_app_dependencies $app_depencencies
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
@@ -116,7 +116,7 @@ case "$lang" in
 		lang="en"
 		;;
 	*)
-		lang="en"
+		lang="fr"
 esac
 ynh_app_setting_set "$app" lang "$lang"
 
